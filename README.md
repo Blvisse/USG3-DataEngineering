@@ -35,3 +35,8 @@ scripts- folder contains python scripts used int he project
 https://www.usgs.gov/core-science-systems/ngp/3dep/what-is-3dep?qt-science_support_page_related_con=0#qt-science_support_page_related_con
 
 https://entwine.io/entwine-point-tile.html
+
+# Badges
+[![GitHub issues](https://img.shields.io/github/issues/Blvisse/USG3-DataEngineering?style=for-the-badge)](https://github.com/Blvisse/USG3-DataEngineering/issues)
+[![GitHub forks](https://img.shields.io/github/forks/Blvisse/USG3-DataEngineering?style=for-the-badge)](https://github.com/Blvisse/USG3-DataEngineering/network)
+[![GitHub license](https://img.shields.io/github/license/Blvisse/USG3-DataEngineering?style=for-the-badge)](https://github.com/Blvisse/USG3-DataEngineering)
