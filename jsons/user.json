@@ -41,6 +41,11 @@
             "resolution": 1,
             "type": "writers.gdal",
             "window_size": 6
-        }
+        },
+	{
+	"filename":"",
+	"type":"writers.text",
+	"format":"csv"
+	}
     ]
 }

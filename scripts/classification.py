@@ -2,6 +2,9 @@ import pdal
 import json
 import os
 import sys
+import logging
+
+
 
 #### we intialize the dataset location present in aws
 dataset_path='https://s3-us-west-2.amazonaws.com/usgs-lidar-public/'
@@ -16,21 +19,33 @@ output_file_laz="iowa.laz"
 output_file_tif="iowa.tif"
 pipeline="../jsons/user.json"
 
+logging.basicConfig(filename='..\logs\classification.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
+
+
+
 def gather_input():
-    print(" ===== Welcome to the API fetch module === \n ")
-    print(" ==== Insert region you would like to search ==== \n")
-    region=input()
-    full_path=dataset_path+region+"/ept.json"
-    print(" ===== Insert the regions bound ====== \n")
-    bound=input()
-    print(" ==== Insert Output filename for laz file ===== \n ")
-    output_file_laz=input()
-    output_file_laz="../laz/"+output_file_laz+".laz"
-    print(" === Insert output filename for tif file ===== \n  ")
-    output_file_tif=input()
-    output_file_tif="../tif/"+output_file_tif+".tif"
-    print(" ==== Insert filter classification ===== \n ")
-    classification=input()
+    try:
+        print(" ===== Welcome to the API fetch module === \n ")
+        print(" ==== Insert region you would like to search ==== \n")
+        region=input()
+        full_path=dataset_path+region+"/ept.json"
+        print(" ===== Insert the regions bound ====== \n")
+        bound=input()
+        print(" ==== Insert Output filename for laz file ===== \n ")
+        output_file_laz=input()
+        output_file_laz="../laz/"+output_file_laz+".laz"
+        print(" === Insert output filename for tif file ===== \n  ")
+        output_file_tif=input()
+        output_file_tif="../tif/"+output_file_tif+".tif"
+        print(" ==== Insert filter classification ===== \n ")
+        classification=input()
+    except Exception as e:
+        print(" !!! Error !!!!! \n")
+        print (" !!! An excetion occurred Error: {} ".format(e.__class__))
+        logging.error(" !!! Error Program Failed !!!!! \n")
+        logging.error("Safely exiting the program")
+        print("Safely exiting the program")
+        sys.exit(1)
     
     
     print("This is the input region serch")
