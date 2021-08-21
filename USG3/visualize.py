@@ -14,6 +14,7 @@ from rasterio.transform import Affine
 from rasterio.crs import CRS
 from shapely.geometry import Polygon
 from rasterio.plot import show
+import earthpy.plot as ep
 
 
 logging.basicConfig(filename='../logs/visaulize.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
@@ -249,4 +250,57 @@ def standardize_plot(geo_frame,setcrs,tiff_file,shp_output):
     show(src)
     plt.show()
 
+def visualize_raster(tiff_file, **kwargs):
+    raster_image=rasterio.open(tiff_file)
+    show(raster,cmap='Reds')
+    
+def visalize_clean_raster(raster_path,**kwargs):
+    print(" #### Accessed clean visaulization function #### \n")
+    
+    try:
+        with rasterio.open(raster_path) as dem_src:
+            dtm_pre_arr=dem_src.read(1)
+            
+    except Exception as e:
+        
+        print(" !!! Error !!!!! \n")
+        print (" !!! An excetion occurred Error: {} ".format(e.__class__))
+        logging.error(" !!! Error Program Failed !!!!! \n")
+        logging.error("Safely exiting the program")
+        print("Safely exiting the program")
+        sys.exit(1)
+        
+    ep.plot_bands(dtm_pre_arr)
+    
+    
+    print("the minimum raster value is: ", dtm_pre_arr.min())
+    print("the maximum raster value is: \n", dtm_pre_arr.max())
+    
+    
+    print(" #### Plotting histogram ##### \n ")
+    ep.hist(dtm_pre_arr,
+        figsize=(10, 6))
+    plt.show()
+    
+    
+    # Read in your data and mask the no data values
+    with rasterio.open(raster_path) as dem_src:
+    # Masked=True will mask all no data values
+        dtm_pre_arr = dem_src.read(1, masked=True)
+    
+    print("the minimum raster value is: ", dtm_pre_arr.min())
+    print("the maximum raster value is: ", dtm_pre_arr.max())
+    
+    # A histogram can also be helpful to look at the range of values in your data
+    ep.hist(dtm_pre_arr,
+            figsize=(10, 6),
+            title="Histogram of the Data with No Data Values Removed")
+    plt.show()
+    
+    # Plot data using earthpy
+    ep.plot_bands(dtm_pre_arr,
+              title="Lidar Digital Elevation Model (DEM) \n ",
+              cmap="Greys")
+
+    plt.show()
     
