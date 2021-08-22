@@ -24,7 +24,12 @@ notebooks- contains notebooks used
 
 The package is naed USG3, to download and use it follow this steps.
 
-Before Interacting with the package ensure you go through and have the ept file located in the jsons folder labelled ``` user.json ``` 
+
+
+## Download
+
+To call the package use  `` pip install USG3 `` 
+
 
 ## Installation
 
@@ -41,9 +46,6 @@ Before Interacting with the package ensure you go through and have the ept file 
 
 ``` visualize.py ``` this script contains all visaulization libraries for the data.
 
-## Download
-
-After that you can now run ``` pip install USG3 ``` to your respective scripts
 
 ## Tutorial 
 
