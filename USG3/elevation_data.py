@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 """
 This package calculates elevation of given geometric points 
@@ -7,6 +8,8 @@ It returns a geopandas dataframe as well as dataframe
 
 """
 
+=======
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 import pylas 
 import laspy
 from shapely.geometry import Point
@@ -44,7 +47,11 @@ def get_elevation(laz_file,las_file,output_path,crs):
         lasfile=laspy.read(las_file)
     except Exception as e:
         print(" !!! Error !!!!! \n")
+<<<<<<< HEAD
         print (" !!! An exception occurred Error: {} ".format(e.__class__))
+=======
+        print (" !!! An excetion occurred Error: {} ".format(e.__class__))
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
         logging.error(" !!! Error Program Failed !!!!! \n")
         logging.error("Safely exiting the program")
         print("Safely exiting the program")

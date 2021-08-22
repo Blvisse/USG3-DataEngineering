@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 """
 This function takes classification values as input and process an ept file with the filter as the classification
@@ -5,6 +6,8 @@ This function takes classification values as input and process an ept file with 
 """
 
 
+=======
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 import pdal
 import json
 import os

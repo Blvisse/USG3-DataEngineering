@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 
 This package invokes an ept pipeline an uses user defined specifications to build the pipeline  
@@ -6,11 +7,17 @@ This package invokes an ept pipeline an uses user defined specifications to buil
 
 
 
+=======
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 import pdal
 import json
 import os
 import sys
 import logging
+<<<<<<< HEAD
+=======
+from glob import glob
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 
 #### we intialize the dataset location present in aws
 dataset_path='https://s3-us-west-2.amazonaws.com/usgs-lidar-public/'
@@ -112,6 +119,19 @@ def get_raster_terrain(bounds,full_path,output_file_laz,output_file_tif,output_f
     metadata=pipeline.metadata
 
 
+<<<<<<< HEAD
+=======
+def get_shp_from_tif(tif_path:str, shp_file_path:str) -> None:
+    raster = rasterio.open(tif_path)
+    bounds = raster.bounds
+
+    df = gpd.GeoDataFrame({"id":1,"geometry":[box(*bounds)]})
+   
+    # save to file
+    df.to_file(shp_file_path)
+    print('Saved..')
+
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 
 if (__name__== '__main__'):
 

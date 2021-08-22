@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 """
 This package carries ot reprojection from one crs format to another
 it also sets reprojection to tif shape files that previous had no specified crs 
 """
 
+=======
+>>>>>>> 5008b8b2173e1144705e22b428283a3ac74ca6ac
 import os 
 import numpy as np
 import geopandas as gpd
