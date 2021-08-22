@@ -11,14 +11,14 @@ setup(
         author="Blaise Papa",
         author_email="blaisepke@gmail.com",
         description=DESCRIPTION,
-        url='#',
+        
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
         install_requires=[], 
         
         keywords=['python', 'first package'],
         classifiers= [
-            "Development Status :: 1 - Alpha",
+            "Development Status :: 1 - Planning",
             "Intended Audience :: Education",
             "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 3",
