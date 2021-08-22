@@ -2,7 +2,7 @@
 =======
 
 """
-This function takes classification values as input and process an ept file with the filter as the classification
+This function takes classification values as input and process an ept file with the filter as the classification filter
 
 """
 
