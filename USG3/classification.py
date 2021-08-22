@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+
+"""
+This function takes classification values as input and process an ept file with the filter as the classification
+
+"""
+
+
+>>>>>>> sphinx
 import pdal
 import json
 import os

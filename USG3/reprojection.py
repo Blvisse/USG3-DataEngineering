@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+"""
+This package carries ot reprojection from one crs format to another
+it also sets reprojection to tif shape files that previous had no specified crs 
+"""
+
+>>>>>>> sphinx
 import os 
 import numpy as np
 import geopandas as gpd

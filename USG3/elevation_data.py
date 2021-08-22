@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+
+"""
+This package calculates elevation of given geometric points 
+The geometric points must have come from a shape file
+
+It returns a geopandas dataframe as well as dataframe 
+
+"""
+
+>>>>>>> sphinx
 import pylas 
 import laspy
 from shapely.geometry import Point
@@ -35,7 +47,11 @@ def get_elevation(laz_file,las_file,output_path,crs):
         lasfile=laspy.read(las_file)
     except Exception as e:
         print(" !!! Error !!!!! \n")
+<<<<<<< HEAD
         print (" !!! An excetion occurred Error: {} ".format(e.__class__))
+=======
+        print (" !!! An exception occurred Error: {} ".format(e.__class__))
+>>>>>>> sphinx
         logging.error(" !!! Error Program Failed !!!!! \n")
         logging.error("Safely exiting the program")
         print("Safely exiting the program")

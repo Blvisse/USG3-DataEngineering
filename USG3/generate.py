@@ -1,9 +1,23 @@
+<<<<<<< HEAD
+=======
+"""
+
+This package invokes an ept pipeline an uses user defined specifications to build the pipeline  
+ 
+ """
+
+
+
+>>>>>>> sphinx
 import pdal
 import json
 import os
 import sys
 import logging
+<<<<<<< HEAD
 from glob import glob
+=======
+>>>>>>> sphinx
 
 #### we intialize the dataset location present in aws
 dataset_path='https://s3-us-west-2.amazonaws.com/usgs-lidar-public/'
@@ -105,6 +119,7 @@ def get_raster_terrain(bounds,full_path,output_file_laz,output_file_tif,output_f
     metadata=pipeline.metadata
 
 
+<<<<<<< HEAD
 def get_shp_from_tif(tif_path:str, shp_file_path:str) -> None:
     raster = rasterio.open(tif_path)
     bounds = raster.bounds
@@ -115,6 +130,8 @@ def get_shp_from_tif(tif_path:str, shp_file_path:str) -> None:
     df.to_file(shp_file_path)
     print('Saved..')
 
+=======
+>>>>>>> sphinx
 
 if (__name__== '__main__'):
 

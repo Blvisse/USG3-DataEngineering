@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+"""
+
+This module focuses on the visualization of geospatial data 
+
+"""
+
+
+>>>>>>> sphinx
 import numpy as np
 import plotly.offline as go_offline
 import plotly.graph_objects as go
@@ -14,7 +24,10 @@ from rasterio.transform import Affine
 from rasterio.crs import CRS
 from shapely.geometry import Polygon
 from rasterio.plot import show
+<<<<<<< HEAD
 import earthpy.plot as ep
+=======
+>>>>>>> sphinx
 
 
 logging.basicConfig(filename='../logs/visaulize.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
@@ -250,6 +263,7 @@ def standardize_plot(geo_frame,setcrs,tiff_file,shp_output):
     show(src)
     plt.show()
 
+<<<<<<< HEAD
 def visualize_raster(tiff_file, **kwargs):
     raster_image=rasterio.open(tiff_file)
     show(raster,cmap='Reds')
@@ -303,4 +317,6 @@ def visalize_clean_raster(raster_path,**kwargs):
               cmap="Greys")
 
     plt.show()
+=======
+>>>>>>> sphinx
     
