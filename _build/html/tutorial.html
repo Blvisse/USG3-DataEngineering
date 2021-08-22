@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; USG3 1.0 documentation</title>
+    <title>USG3 Module Tutorials &#8212; USG3 1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -14,7 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Script documentation" href="code.html" />
+    <link rel="next" title="Environmental requirements for the package" href="requirements.html" />
     <link rel="prev" title="Welcome to USG3’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -32,7 +32,153 @@
 
           <div class="body" role="main">
             
-  
+  <div class="section" id="usg3-module-tutorials">
+<h1>USG3 Module Tutorials<a class="headerlink" href="#usg3-module-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>The package consists of a number of scripts that carry out different functions</p>
+<div class="section" id="modules-in-the-package">
+<h2>Modules In  The package<a class="headerlink" href="#modules-in-the-package" title="Permalink to this headline">¶</a></h2>
+<p>Supported functions include the following:</p>
+<ol class="arabic simple">
+<li><p>classification</p></li>
+<li><p>elevation_data</p></li>
+<li><p>elevation</p></li>
+<li><p>visualize</p></li>
+<li><p>generate</p></li>
+<li><p>reprojection</p></li>
+</ol>
+<div class="section" id="generate">
+<h3>Generate<a class="headerlink" href="#generate" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="gather_input">
+<span class="sig-name descname"><span class="pre">gather_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gather_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a script function meant to be run on the command line console
+It is interactive and enables the user to input various parameters that the function wil use to produce a raster file,shape and geojson file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bound,full_path,output_file_laz,output_file_tif,output_file_csv</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="get_raster_terrain">
+<span class="sig-name descname"><span class="pre">get_raster_terrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file_laz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file_tif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#get_raster_terrain" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function generates necessary geospatial data files such as raster files and las files</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param:bounds</dt>
+<dd class="field-odd"><p>input the bounds of the region</p>
+</dd>
+<dt class="field-even">Param:full_path</dt>
+<dd class="field-even"><p>input the full path of the region’s ept file this is can be found by runining the gather input function</p>
+</dd>
+<dt class="field-odd">Param:output_file_laz</dt>
+<dd class="field-odd"><p>input the location to store the laz file</p>
+</dd>
+<dt class="field-even">Param:output_file_tif</dt>
+<dd class="field-even"><p>input the location to store the raster image file this</p>
+</dd>
+<dt class="field-odd">Param:output_file_csv</dt>
+<dd class="field-odd"><p>input the location to store the geopandas dataframe stored in csv format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="elevation-data">
+<h3>Elevation_data<a class="headerlink" href="#elevation-data" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="get_elevation">
+<span class="sig-name descname"><span class="pre">get_elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">laz_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">las_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#get_elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts elevation of given geometrical points given the latitude and the longitude of the given point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param:laz_file</dt>
+<dd class="field-odd"><p>The given laz file that contains the detailed geographical data  of the location</p>
+</dd>
+<dt class="field-even">Param:las_file</dt>
+<dd class="field-even"><p>The location to store the converted las file equivalent of the laz file</p>
+</dd>
+<dt class="field-odd">Param:output_path</dt>
+<dd class="field-odd"><p>The output path fot the geopandas dataframe generated</p>
+</dd>
+<dt class="field-even">Param:crs</dt>
+<dd class="field-even"><p>The projection crs you desire to use</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geoPandasData frame , lasfile dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="classification">
+<h3>classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/lidarclass.png" src="_images/lidarclass.png" />
+</div>
+<div class="section" id="reprojection">
+<h3>Reprojection<a class="headerlink" href="#reprojection" title="Permalink to this headline">¶</a></h3>
+<p>This is a class script and hence must be initialized before using it
+The class requires a geopandas dataframe for initialization.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;instance</span> <span class="pre">name&gt;=REPRO(geoapndasfile)</span></code></p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">&lt;instance</span> <span class="pre">name&gt;.reprojet():</span></span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>a set reprojection crs for the given geopandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="visualize">
+<h3>visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">¶</a></h3>
+<p>This class comprises functions to visualize the data</p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">visalize_3D(las_file,output_name,</span> <span class="pre">**kwargs):</span></span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Param:las_file</dt>
+<dd class="field-odd"><p>the las file from which we get the information</p>
+</dd>
+<dt class="field-even">Output:output_name</dt>
+<dd class="field-even"><p>the output name for the 3d renderer</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>a 3D plot stored in html format</p>
+</dd>
+</dl>
+<div class="figure align-center" id="id1">
+<img alt="_images/iowa3d.png" src="_images/iowa3d.png" />
+<p class="caption"><span class="caption-text">3D visualization of IO_FULLSTATE</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="standardize_plot">
+<span class="sig-name descname"><span class="pre">standardize_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setcrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiff_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shp_output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#standardize_plot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Param:geo_frame</dt>
+<dd class="field-odd"><p>Geodata frame</p>
+</dd>
+<dt class="field-even">Param:setc</dt>
+<dd class="field-even"><p>set the reprojection of the geopandas dataframe</p>
+</dd>
+<dt class="field-odd">Param:tiff_file</dt>
+<dd class="field-odd"><p>path to the raster image file</p>
+</dd>
+<dt class="field-even">Param:shp_output</dt>
+<dd class="field-even"><p>path to store the correspodning shape file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
 
           </div>
           
@@ -51,8 +197,12 @@
 
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Script documentation</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">USG3 Module Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modules-in-the-package">Modules In  The package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Environmental requirements for the package</a></li>
 </ul>
 
 <div class="relations">
@@ -60,7 +210,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to USG3’s documentation!</a></li>
-      <li>Next: <a href="code.html" title="next chapter">Script documentation</a></li>
+      <li>Next: <a href="requirements.html" title="next chapter">Environmental requirements for the package</a></li>
   </ul></li>
 </ul>
 </div>

@@ -1,9 +1,9 @@
 Script documentation
 =====================
 
-    automodule:: USG3
+.. automodule:: USG3
 
-    :members:
+    :members: 
 
-    
+
 

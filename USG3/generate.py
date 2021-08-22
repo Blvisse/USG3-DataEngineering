@@ -70,11 +70,11 @@ def get_raster_terrain(bounds,full_path,output_file_laz,output_file_tif,output_f
     
     
 
-    print(" ***** Reading pipleine file ****** ")
+    print(" ***** Reading pipeline file ****** ")
     try:
         with open(pipeline) as json_file:
             file_json=json.load(json_file)
-        print(" ##### Succesfuly read json file ###### ")   
+        print(" ##### Successfully read json file ###### ")   
     except FileNotFoundError as f:
         print(" !!! The specified pipeline json file doesn't exist !!!! ")
         logging.error("#### File Not found error ##### ")
