@@ -18,7 +18,9 @@ tif-stores .tif files
 notebooks- contains notebooks used
 
 
+# Documentation
 
+The package documentation can be found in the usg3.pdf file 
 
 # Package
 
@@ -48,6 +50,7 @@ To call the package use  `` pip install USG3 ``
 
 
 ## Tutorial 
+
 
 Simple tutorials on how to interact with the API are available in the notebooks folder.
 
