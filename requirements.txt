@@ -1,4 +1,4 @@
-USG3
+
 numpy 
 pandas
 sklearn
