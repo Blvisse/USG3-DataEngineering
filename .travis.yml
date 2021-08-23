@@ -19,4 +19,4 @@ install:
 
 # Command to run tests, e.g. python setup.py test
 script:
-  - python -m unittest setup
+  - python setup.py 
