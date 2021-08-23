@@ -14,9 +14,9 @@ jobs:
         run: |
           # Your ML workflow goes here
           
+          pip install USG3
+          
           python setup.py
-          
-          
           
           
           echo "## Data viz" >> report.md
