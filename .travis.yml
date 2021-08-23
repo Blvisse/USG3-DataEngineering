@@ -14,9 +14,10 @@ env:
 # Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install:
   - pip install -r requirements.txt
+  - pip install wheel
   
 
 
 # Command to run tests, e.g. python setup.py test
 script:
-  - python -m unittest setup
+  - python setup.py sdist bdist_wheel 
