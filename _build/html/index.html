@@ -14,7 +14,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="tutorial.html" />
+    <link rel="next" title="USG3 Module Tutorials" href="tutorial.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,23 +33,76 @@
             
   <div class="section" id="welcome-to-usg3-s-documentation">
 <h1>Welcome to USG3’s documentation!<a class="headerlink" href="#welcome-to-usg3-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>The USGS 3DEP project (United States Geological Survey 3D Elevation Program) aims at responding to growing needs for high-quality topographic data and a wide range of 3D data representation of the county’s features. You can read about the full project here. The data is stored in a repository on an amazon server. The server contains geospatial data on over 1000 geographical regions. The data stored is in a .ept JSON file format. Entwine Point Tile format (ept)is a simple way to store data. It achieves this by a simple tree-based format. To enable processing ept has crucial keys that enable smooth processing. The dataset is however very complicated to understand</p>
+<p>The USGS 3DEP project (United States Geological Survey 3D Elevation Program) aims at responding to growing needs for high-quality topographic data and a wide range of 3D data representation of the county’s features.</p>
+<p>The data is stored in a repository on an amazon server. The server contains geospatial data on over 1000 geographical regions. The data stored is in a .ept JSON file format. Entwine Point Tile format (ept)is a simple way to store data. It achieves this by a simple tree-based format. To enable processing ept has crucial keys that enable smooth processing. The dataset is however very complicated to understand</p>
 <p>Hence this project aims to create a package to interact with the data and process it into a less complex file, example of code interaction can be found in the notebook labeled scriptdemeonstration.ipynb</p>
-<p>All package dependancies can be found in the requirements.txt file</p>
+<p>All package dependencies can be found in the requirements.txt file</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0: </span></p>
+<ol class="arabic simple">
+<li><p>Fetching of data from USGS 3DEP amazon data source</p></li>
+<li><p>Visualization of boundaries</p></li>
+<li><p>Calculation of Topographic Wetness Index</p></li>
+<li><p>Transformation of boundary points</p></li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>* This is an API in very early stages of development that may include some bugs or not support some systems *</strong></p>
+</div>
+<div class="section" id="how-to-interact-with-the-api">
+<h2>How to Interact with the API<a class="headerlink" href="#how-to-interact-with-the-api" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Run:</p></li>
+</ol>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">USG3</span></code></p>
+<p>to install the API and all dependencies</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>To import the API and all dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">USG3</span>
+</pre></div>
+</div>
+<p>to your IDE/script</p>
+</li>
+<li><p>If you require specific functions from the package you can access them via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">USG3</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Script documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">USG3 Module Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#modules-in-the-package">Modules In  The package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Environmental requirements for the package</a></li>
 </ul>
 </div>
 </div>
+<div class="section" id="setup-snippets">
+<h2>Setup Snippets<a class="headerlink" href="#setup-snippets" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="get-data-api">
+<h2>Get Data API<a class="headerlink" href="#get-data-api" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="visualization-script">
+<h2>Visualization Script<a class="headerlink" href="#visualization-script" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</div>
 </div>
 
 
@@ -71,14 +124,15 @@
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Script documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">USG3 Module Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Environmental requirements for the package</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="tutorial.html" title="next chapter">&lt;no title&gt;</a></li>
+      <li>Next: <a href="tutorial.html" title="next chapter">USG3 Module Tutorials</a></li>
   </ul></li>
 </ul>
 </div>

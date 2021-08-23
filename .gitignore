@@ -131,3 +131,6 @@ dmypy.json
 
 /geodataf
 /geojson
+/_static
+/_templates
+/_build/latex
