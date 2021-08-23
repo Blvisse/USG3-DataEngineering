@@ -133,3 +133,4 @@ dmypy.json
 /geojson
 /_static
 /_templates
+/_build/latex
